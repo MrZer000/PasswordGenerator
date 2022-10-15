@@ -14,7 +14,7 @@ UCAlphabets = string.ascii_uppercase
 Numbers = string.digits
 Symbols = string.punctuation
 
-def GeneratePassword(PasswordType : int , PasswordCount : int , PasswordLengeth : int):
+def GeneratePassword(PasswordType : int , PasswordCount : int , PasswordLength : int):
 
     with open("PasswordList.txt",'a+') as PasswordFile :
         PasswordFile.truncate(0)
@@ -31,7 +31,7 @@ def GeneratePassword(PasswordType : int , PasswordCount : int , PasswordLengeth 
         for i in range(PasswordCount):
             Passwords.append( random.choice(ChosenType) )
         for item in range(len(Passwords)):
-            for x in range(PasswordLengeth):
+            for x in range(PasswordLength):
                 Passwords[item] += random.choice(ChosenType) 
         PasswordFile = open("PasswordList.txt",'a')
         for password in Passwords :
